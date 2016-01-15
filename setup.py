@@ -35,7 +35,7 @@ with open('requirements.txt') as f:
 
 setup(
     name='wechatpy.async.tornado',
-    version='1.0.0',
+    version='1.0.1',
     author='messense',
     author_email='messense@icloud.com',
     url='https://github.com/messense/wechatpy',
@@ -45,7 +45,6 @@ setup(
     long_description=long_description,
     install_requires=requirements,
     include_package_data=True,
-    namespace_packages=['wechatpy'],
     tests_require=[
         'pytest',
         'pytest-tornado',
