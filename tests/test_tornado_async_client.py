@@ -84,7 +84,7 @@ def map_request_to_json_file(monkeypatch):
     monkeypatch.setattr(AsyncHTTPClient, 'fetch', wechat_api_mock)
 
 
-@pytest.fixture()
+@pytest.fixture(scope='module')
 def client():
     from wechatpy.client.async.tornado import AsyncWeChatClient
 

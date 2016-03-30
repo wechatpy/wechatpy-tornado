@@ -1,0 +1,27 @@
+language: python
+
+# Use container-based infrastructure
+sudo: false
+
+python:
+  - 2.7
+  - 3.4
+  - 3.5
+
+services:
+  - redis-server
+  - memcached
+
+cache:
+  directories:
+    - $HOME/.cache/pip
+
+install:
+  - pip install -r dev-requirements.txt
+  - python setup.py install
+
+script: py.test -v --cov tests
+
+after_success:
+  - pip install codecov
+  - codecov
