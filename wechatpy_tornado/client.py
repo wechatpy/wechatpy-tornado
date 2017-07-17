@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
+
 import time
 
 from six.moves.urllib.parse import urlencode
 from tornado.gen import coroutine, Return
 from tornado.httpclient import AsyncHTTPClient, HTTPRequest
 
-from wechatpy._compat import json
-from wechatpy.utils import to_binary
+from wechatpy.utils import to_binary, json
 from wechatpy.client import WeChatClient
 from wechatpy.exceptions import WeChatClientException
 
@@ -48,7 +48,7 @@ class AsyncClientMixin(object):
                         access_token = self.access_token
             else:
                 # fetch access
-                yield self._fetch_access_token()
+                yield self.fetch_access_token()
 
             params['access_token'] = self.access_token
 

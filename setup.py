@@ -34,11 +34,11 @@ with open('requirements.txt') as f:
     requirements = [l for l in f.read().splitlines() if l]
 
 setup(
-    name='wechatpy.async.tornado',
-    version='1.0.1',
+    name='wechatpy_tornado',
+    version='1.0.0',
     author='messense',
     author_email='messense@icloud.com',
-    url='https://github.com/messense/wechatpy',
+    url='https://github.com/wechatpy/wechatpy-tornado',
     packages=find_packages(),
     keywords='WeChat, wexin, SDK',
     description='wechatpy: WeChat SDK for Python',
